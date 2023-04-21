@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>계정관리</h1>
+    <div>
+        이름 : <span th:text = "${memberFormDto.name}"></span>
+    </div>
+    <div>
+        이메일 : <span th:text = "${memberFormDto.email}"></span>
+    </div>
+    <div>
+        회사이름 : <span th:text = "${memberFormDto.companyName}"></span>
+    </div>
+    <div>
+        조직 : <span th:text = "${memberFormDto.companyGroup}"></span>
+    </div>
+</body>
+</html>

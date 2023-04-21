@@ -28,9 +28,15 @@ public class Member {
 
     private String password;
 
-//    private String passwordCheck;
+    private String passwordCheck;
+
+    private String zipCode; // 우편번호
 
     private String address;
+
+    private String detailAddress; // 상세 주소
+
+    private String village; // 참고 항목
 
     private String companyName;
 
@@ -44,11 +50,16 @@ public class Member {
         member.setName(memberFormDto.getName());
         member.setEmail(memberFormDto.getEmail());
         member.setAddress(memberFormDto.getAddress());
+        member.setZipCode(memberFormDto.getZipCode());
+        member.setDetailAddress(memberFormDto.getDetailAddress());
+        member.setVillage(memberFormDto.getVillage());
         member.setCompanyName(memberFormDto.getCompanyName());
         member.setCompanyGroup(memberFormDto.getCompanyGroup());
         String password = passwordEncoder.encode(memberFormDto.getPassword());
+        String passwordCheck = passwordEncoder.encode(memberFormDto.getPasswordCheck());
         member.setPassword(password);
-        member.setRole(Role.USER);
+        member.setPasswordCheck(passwordCheck);
+        member.setRole(Role.ADMIN);
         return member;
     }
 }
